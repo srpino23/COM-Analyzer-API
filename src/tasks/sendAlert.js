@@ -1,9 +1,10 @@
 const TelegramBot = require("node-telegram-bot-api");
+import config from "../config";
 import "../database";
 import Camera from "../models/Camera";
 import TelegramUser from "../models/TelegramUser";
 
-const token = "7846456911:AAHbcvEVJluUmXxXnaoRfaQADll-FTN7p4c";
+const token = config.telegramToken;
 const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(/\/start/, async (msg) => {
